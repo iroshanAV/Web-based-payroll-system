@@ -77,7 +77,7 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
-  <!------------end of navBar------------------------------------------------------------>
+  <!--end of navBar-->
   
   <div class="col-md-4" id="leftCol">
       <div class="row center-block">
@@ -86,10 +86,8 @@
               
               <% if(request.getAttribute("newMem")!=null){
                   out.println(request.getAttribute("newMem"));
-              }
-                  
-              %>
-          
+              }               
+              %>       
           
           </h2>
           </div>
@@ -105,7 +103,8 @@
                 out.println(request.getAttribute("errSearch")); 
             }
             
-        %></p>
+        %>
+		  </p>
       </div>
           
           <!------------------------------------------------------------------------------------------->
@@ -121,7 +120,6 @@
     }
     %> 
 
-
     <hr>
     <div class="row">
           <div class="col-md-4 col-xs-3"></div>
@@ -130,16 +128,13 @@
                     <img src="empImg/<%=empID %>.jpg" class="img-circle img-responsive center-block empImgFile" alt="Placeholder image">
                 </div>
                  </div>
-                 <div class="col-md-4 col-xs-3"></div>
-             
+                 <div class="col-md-4 col-xs-3"></div>           
     </div>
-         <div class="row center-block container-fluid">
-             
+         <div class="row center-block container-fluid">        
                  <% Employee em = new Employee();%>
                  <P class="SearchData">Name: <%= em.getName(empID)%></P>
                  <P class="SearchData">NIC: <%= em.getNIC(empID)%></P>
-                 <P class="SearchData">Job: <%=em.getJobName(empID)%></P>
-                 
+                 <P class="SearchData">Job: <%=em.getJobName(empID)%></P>                 
                  
                  <P class="SearchData">Email: <a href="mailto:<%=em.getEmail(empID)%>?Subject=Hello%20again" target="_top"><%=em.getEmail(empID)%></a></P>
                  <P class="SearchData">Contact No: <%=em.getContactNo(empID)%></P>
@@ -153,11 +148,8 @@
                  </button>
                  </form>
                  </div>  
-                    <!-------------------------------->
-                    
-                    
+                    <!-------------------------------->                 
         </div>
-  
   </div>
 <div class="col-md-8" id="rightCol">
   <div class="TotalDetails center-block container-fluid"><p class="empData">All Payrolls</p></div>
@@ -187,9 +179,7 @@
                     
                     %>            
         </table>
-     </div>
-    
-     
+     </div>    
   </div>
   
   <script>setTimeout(function(){
