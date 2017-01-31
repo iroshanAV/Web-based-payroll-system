@@ -39,10 +39,9 @@ public class Employee {
             
             ResultSet rs = ps1.executeQuery();
            
+            //getting form field details
             
-            
-                while(rs.next()){
-                
+                while(rs.next()){                
                     empInfo.add(rs.getString("jobID"));//0
                     empInfo.add(rs.getString("name"));//1
                     empInfo.add(rs.getString("nic"));//2
@@ -61,16 +60,7 @@ public class Employee {
         catch(HeadlessException ez){
         System.out.println("Error :"+ez);
     }
-     
-      
-      
-      
-      
-      
-      
-      
-      
-      
+        
       try{  
           String sql2 = "SELECT TOP 1 netPay FROM Transactions where empID = ? ORDER BY dateTime DESC ;";
             PreparedStatement ps2 = conn.prepareStatement(sql2);
@@ -94,13 +84,8 @@ public class Employee {
         catch(HeadlessException ez){
         System.out.println("Error :"+ez);
     }
-      
-      
-      
-      
-      
-      
-      empInfo.stream().forEach((i) -> {
+       
+     empInfo.stream().forEach((i) -> {
           System.out.println(i);
         });
       
@@ -201,9 +186,7 @@ public class Employee {
         return chk;
         
     }
-    
-    
-    
+     
     
     protected void DelRow(String empID){
         Connection conn = new ConnectDB().connect();
@@ -223,7 +206,5 @@ public class Employee {
         System.out.println("Error :"+ez);
     }
     }
-
-    
     
 }
