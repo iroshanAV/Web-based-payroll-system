@@ -17,10 +17,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author Shan Wijenayaka
  */
 public class DeleteRow extends HttpServlet {
-
-
-    
-
  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
